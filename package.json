@@ -6,8 +6,7 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "backend": "node backend/server.js"
+    "web": "expo start --web"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
@@ -15,7 +14,7 @@
     "expo": "~50.0.2",
     "expo-status-bar": "~1.11.1",
     "expo-av": "~13.10.4",
-    "expo-ads-admob": "~14.2.1",
+    "expo-ads-admob": "~13.0.0",
     "expo-sharing": "~11.10.0",
     "expo-secure-store": "~12.8.1",
     "react": "18.2.0",
