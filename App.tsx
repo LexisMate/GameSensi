@@ -5,7 +5,7 @@ import OpenScreen from './src/screens/OpenScreen';
 import DeviceScreen from './src/screens/DeviceScreen';
 import GameScreen from './src/screens/GameScreen';
 import SensiScreen from './src/screens/SensiScreen';
-import AdBanner from './src/components/AdBanner'; // Add AdBanner component
+import AdBanner from './src/components/Ads';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +39,7 @@ export default function App() {
           component={GameScreen} 
           options={{
             title: 'Select Game',
-            headerRight: () => <AdBanner />, // Show banner ad
+            headerRight: () => <AdBanner />,
           }}
         />
         <Stack.Screen 
