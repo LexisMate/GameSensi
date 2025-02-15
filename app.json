@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Game Sensi",
+    "slug": "game-sensi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+      "newArchEnabled": true
+    }
+  }
+}
