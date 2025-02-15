@@ -5,48 +5,49 @@ import OpenScreen from './src/screens/OpenScreen';
 import DeviceScreen from './src/screens/DeviceScreen';
 import GameScreen from './src/screens/GameScreen';
 import SensiScreen from './src/screens/SensiScreen';
-import { AdMobProvider } from './src/context/AdMobContext';
+import AdBanner from './src/components/AdBanner'; // Add AdBanner component
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <AdMobProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Open"
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: '#1a1a1a',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Open"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#1a1a1a',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen 
+          name="Open" 
+          component={OpenScreen} 
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen 
+          name="Devices" 
+          component={DeviceScreen} 
+          options={{ title: 'Select Device' }}
+        />
+        <Stack.Screen 
+          name="Games" 
+          component={GameScreen} 
+          options={{
+            title: 'Select Game',
+            headerRight: () => <AdBanner />, // Show banner ad
           }}
-        >
-          <Stack.Screen 
-            name="Open" 
-            component={OpenScreen} 
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name="Devices" 
-            component={DeviceScreen} 
-            options={{ title: 'Select Device' }}
-          />
-          <Stack.Screen 
-            name="Games" 
-            component={GameScreen} 
-            options={{ title: 'Select Game' }}
-          />
-          <Stack.Screen 
-            name="Sensitivity" 
-            component={SensiScreen} 
-            options={{ title: 'Best Sensitivity' }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </AdMobProvider>
+        />
+        <Stack.Screen 
+          name="Sensitivity" 
+          component={SensiScreen} 
+          options={{ title: 'Best Sensitivity' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
