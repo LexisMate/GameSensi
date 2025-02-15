@@ -1,22 +1,29 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { AdMobBanner, AdMobRewarded } from 'expo-ads-admob';
+
 const TEST_AD_UNIT_ID = 'ca-app-pub-3940256099942544/9214589741';
+
 export const BannerAd = () => {
+  const handleAdError = (error: any) => {
+    console.error('Banner Ad Error:', error);
+  };
+
   return (
     <View style={styles.container}>
       <AdMobBanner
         bannerSize="banner"
-        adUnitID={TEST_AD_UNIT_ID} // Test ID
+        adUnitID={TEST_AD_UNIT_ID} // Test Ad Unit
         servePersonalizedAds={true}
-        onDidFailToReceiveAdWithError={(error) => console.log('Banner Ad Error:', error)}
+        onDidFailToReceiveAdWithError={handleAdError}
       />
     </View>
   );
 };
-export const showRewardedAd = async () => {
+
+export const showRewardedAd = async (): Promise<boolean> => {
   try {
-    await AdMobRewarded.setAdUnitID(TEST_AD_UNIT_ID); // Test ID
+    await AdMobRewarded.setAdUnitID(TEST_AD_UNIT_ID); // Test Ad Unit
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
     console.log('Rewarded Ad Shown');
@@ -26,6 +33,7 @@ export const showRewardedAd = async () => {
     return false;
   }
 };
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
