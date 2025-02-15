@@ -10,7 +10,11 @@ export function AdMobProvider({ children }) {
 
   const initializeAdMob = async () => {
     try {
-      await AdMob.initialize();
+      await AdMob.setRequestConfiguration({
+        testDeviceIdentifiers: [AdMob.simulatorId], // Ensure test devices are configured
+      });
+      await AdMob.initialize(); // Initialize AdMob
+      console.log('AdMob Initialized');
     } catch (error) {
       console.error('AdMob initialization failed:', error);
     }
