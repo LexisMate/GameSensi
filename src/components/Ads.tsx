@@ -1,8 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import { AdMobBanner, AdMobRewarded } from 'expo-ads-admob';
-
-// Replace these with your actual AdMob IDs
 const BANNER_ID = 'ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy';
 const REWARDED_ID = 'ca-app-pub-xxxxxxxxxxxxxxxx/yyyyyyyyyy';
 
