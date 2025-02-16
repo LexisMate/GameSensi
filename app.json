@@ -10,6 +10,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "newArchEnabled": false
+    "newArchEnabled": false,
+    "android": {
+      "package": "com.twobi.gamesensi"
+    }
   }
 }
